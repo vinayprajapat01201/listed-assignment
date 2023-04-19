@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.Container__main {
+    display: flex;
+    flex-direction: row;
+}
+
+.banner__name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    left: 0;
+    right: 0;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+}
+
+.banner__name h1 {
+    font-size: 72px;
+    color: rgb(255, 255, 255);
+}
+
+.Container__login {
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5F5;
+    ;
+}
+
+.Sign__in__container {
+    display: flex;
+    flex-direction: column;
+    width: 38%;
+}
+
+.heading_ection {
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.heading_section h1 {
+    padding: 5px 0px;
+}
+
+.para_in {
+    margin: 0px;
+    font-size: 16px;
+}
+
+.heading_cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.heading_section button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    width: 45%;
+    border-radius: 10px;
+    background: #FFFFFF;
+    height: 30px;
+    border: 0px solid;
+}
+
+.heading_cont img {
+    height: 20px;
+    background: fixed;
+}
+
+.heading_cont p {
+    font-size: 12px;
+    margin: 0px 10px;
+    color: #858585;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: #FFFFFF;
+    padding: 29px;
+    border-radius: 20px;
+}
+
+.input_section p {
+    padding: 10px 0;
+}
+
+.input_section input {
+    padding: 0px 10px;
+    /* width: 80%; */
+    height: 40px;
+    border-radius: 10px;
+    border: 0px solid;
+    background: #F5F5F5;
+}
+
+.input_section button {
+    height: 40px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input:focus {
+    border: none;
+    outline: none;
+    background: #EAEAEA;
+}
+
+.register__section {
+    text-align: center;
+    color: #858585;
+    padding: 7px 0px;
+}
+
+a {
+    padding: 3px;
+    color: #346BD5;
+    text-decoration: none;
+}
