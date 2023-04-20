@@ -1,3 +1,24 @@
+Welcome to my React assignment with Google authentication and API integration!
+
+This application was built using React and Firebase for Google authentication. The application pulls data from the DataUSA API, specifically the population statistics of different nations.
+
+To run the application locally, first clone the repository from GitHub. Then, navigate to the project directory and run the following command in the terminal:
+npm start
+
+This will start the development server and open the application in your default browser. You can then view the application and its functionality.
+
+The deployed version of the application can be found at the following link:
+https://listed-assignment-12018667.netlify.app/
+
+The application allows users to sign in using their Google account and view the population statistics of different nations. Users can also search for a specific nation and view its population statistics.
+
+The application is deployed using Netlify, a cloud computing platform that allows for easy deployment and hosting of web applications.
+
+Thank you for checking out my assignment!
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
