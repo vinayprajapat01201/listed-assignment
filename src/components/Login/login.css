@@ -161,6 +161,15 @@ a {
     .Header__section h1 {
         font-size: 48px;
     }
+    .heading_section h1,
+    p {
+        text-align: center;
+        justify-content: center;
+    }
+    .heading_cont {
+        align-items: center;
+        justify-content: center;
+    }
     .Container__login {
         width: 100%;
         flex-direction: column;
