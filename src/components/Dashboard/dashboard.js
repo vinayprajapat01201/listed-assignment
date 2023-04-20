@@ -31,6 +31,9 @@ const Dashboard = () => {
         setIsVisible(!isVisible);
         divRef.current.style.display = isVisible ? 'none' : 'block';
     };
+
+
+
     const signUserOut = () => {
         signOut(auth).then(() => {
             localStorage.clear();
@@ -38,6 +41,17 @@ const Dashboard = () => {
             window.location.pathname = "/"
         });
     };
+
+    useEffect(() => {
+        const isAuth = localStorage.getItem("isAuth");
+    
+        if (!isAuth) {
+            signUserOut();
+        }
+      }, []);
+
+
+
     const [data, setdata] = useState([]);
     const [labeled, setlab] = useState([]);
     const [cdata, setcdata] = useState([]);
@@ -96,88 +110,120 @@ const Dashboard = () => {
     const chart = {
         labels: labeled,
         datasets: [
-            {
-                label: "Us Population",
-                data: data,
-                borderColor: '#E9A0A0',
-                tension: 0.4,
-
-
-
-                pointBackgroundColor: '#E9A0A0',
-                showLine: true
-            }
-            // , {
-            //     label: "new Delhi",
-            //     data: [0,0,0,0,0,0,0],
-
-            //     borderColor: '#9BDD7C',
-            //     tension: 0.4,
-
-
-            //     pointBorderColor: '#9BDD7C',
-            //     pointBackgroundColor: '#9BDD7C',
-            //     showLine: true
-            // },
-
-        ]
-    }
-    const options = {
+          {
+            label: 'US Population',
+            data: data,
+            borderColor: '#E9A0A0',
+            tension: 0.4,
+            pointBackgroundColor: '#E9A0A0',
+            showLine: true,
+          },
+        ],
+      };
+      const options = {
         maintainAspectRatio: false,
         plugins: {
-
-            legend: {
-                align: 'end',
-                position: 'top',
-                labels: {
-                    usePointStyle: true,
+          legend: {
+            align: 'end',
+            position: 'top',
+            labels: {
+              usePointStyle: true,
+              color: 'black', // set the color of the legend labels
+              generateLabels: function (chart) {
+                var data = chart.data;
+                if (data.datasets.length) {
+                  var labels = ['Population 1', 'Dummy Population'];
+                  return labels.map(function (label, i) {
+                    var dataset = data.datasets[0];
+                    return {
+                      text: label,
+                      fillStyle: i === 0 ? '#E9A0A0' : '#75c9c8', // set the color of each legend label
+                      strokeStyle: 'white',
+                      lineWidth: 2,
+                      index: i,
+                    };
+                  });
                 }
-            }
+                return [];
+              },
+            },
+          },
         },
-
         spanGaps: true,
-
         scales: {
-            x: {
-                grid: {
-                    display: false
-                },
-
-            }
-        }
-    }
+          x: {
+            grid: {
+              display: false,
+            },
+          },
+        },
+      };
+      
 
     //pie
     const chartdata = {
-        labels: ["Newly Added", "Edited", "Deleted"],
+        labels: ['iPhone', 'Samsung', 'OnePlus+'],
         datasets: [
-            {
-                label: "Markets Monitored",
-                backgroundColor: [
-                    "#83ce83",
-                    "#959595",
-                    "#f96a5d",
-                    "#00A6B4",
-                    "#6800B4",
-                ],
-                data: [37, 33, 30],
-                hoverOffset: 4
-            },
+          {
+            label: 'Markets Monitored',
+            backgroundColor: [
+              '#83ce83',
+              '#959595',
+              '#f96a5d',
+              '#00A6B4',
+              '#6800B4',
+            ],
+            data: [37, 33, 30],
+            hoverOffset: 4,
+          },
         ],
-    };
-    const options2 = {
+      };
+      
+      const options2 = {
         plugins: {
-
-            legend: {
-
-                position: 'right',
-                labels: {
-                    usePointStyle: true,
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                var label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
                 }
-            }
+                label += context.formattedValue.toLocaleString() + ' Markets Monitored';
+                return label;
+              },
+            },
+          },
+          legend: {
+            position: 'right',
+            labels: {
+              usePointStyle: true,
+              padding: 30, // add padding between legend labels
+              generateLabels: function (chart) {
+                var data = chart.data;
+                if (data.labels.length && data.datasets.length) {
+                  return data.labels.map(function (label, i) {
+                    var dataset = data.datasets[0];
+                    var dataValue = dataset.data[i];
+                    return {
+                      text: label + '\n' + dataValue.toLocaleString(),
+                      fillStyle: dataset.backgroundColor[i],
+                      strokeStyle: 'white',
+                      lineWidth: 2,
+                      index: i,
+                    };
+                  });
+                }
+                return [];
+              },
+            },
+          },
         },
         maintainAspectRatio: false,
-    }
+      };
+      
+      
+      
+      
     return (
         <div className="main-dash">
             <div className="nav-dash">
@@ -188,69 +234,80 @@ const Dashboard = () => {
                     <a href="#">Schedules</a>
                     <a href="#">Users</a>
                     <a href="#">Settings</a> */}
-                    <a><img src={dashboards} alt="logo" /><p>Dashboard</p></a>
-                    <a><img src={transactions} alt="logo" /><p>Transactions</p></a>
-                    <a><img src={schedules} alt="logo" /><p>Schedules</p></a>
-                    <a><img src={users} alt="logo" /><p>Users</p></a>
-                    <a><img src={settings} alt="logo" /><p>Settings</p></a>
+                    <div className="menu-container">
+                        <div className='space'></div>
+                        <a><i class="fa fa-tachometer" aria-hidden="true"></i><p style={{fontWeight: 900}}>Dashboard</p></a>
+                        <a><i class="fa fa-money" aria-hidden="true"></i><p>Transactions</p></a>
+                        <a><i class="fa fa-clock-o" aria-hidden="true"></i><p>Schedules</p></a>
+                        <a><i class="fa fa-user" aria-hidden="true"></i><p>Users</p></a>
+                        <a><i class="fa fa-cog" aria-hidden="true"></i><p>Settings</p></a>
+                    </div>
+                    
                 </div>
                 <div className="in-nav-dash">
                     <p>Help</p>
                     <p>Contact us</p>
                 </div>
-
-
             </div >
-
+                
+            
             <div className="container-dash">
+                {/* top nav bar */}
                 <div className="top-cont-dash">
                     <div className="logo-dash">
                         <h1>Dashboard</h1>
 
                     </div>
                     <div className="search-dash">
-                        <input type="search" placeholder="Search" />
-                        <img src={notification} />
-                        <button onClick={handleClick}>                        <img src={localStorage.photoUrl} />
+                        <input type="search" placeholder="Search" className='hover' />
+                        <img src={notification}  className='hover'/>
+                        <button onClick={handleClick}  className='hover'>                        
+                            <img src={localStorage.photoUrl}  />
                         </button>
                         <div ref={divRef} className='menu'>
                             <p>{localStorage.name}</p>
+                            <div className='space'></div>
                             <a onClick={signUserOut}>Sign Out</a>
                         </div>
 
 
                     </div>
                 </div>
+                
+                {/* top nav bar */}
                 <div className="val-cont-dash">
                     <div className="a-val-cont-dash">
-                        <p>Total Revenues</p>
-                        <b>{cdata.Nation}</b>
+                        <h1><i class="fa fa-globe" aria-hidden="true"></i></h1>
+                        <p> Country</p>
+                        <p>{cdata.Nation}</p>
                     </div>
                     <div className="b-val-cont-dash">
-                        <p>Total Transactions</p>
-                        <b>{cdata.Year}</b>
+                        <h1><i class="fa fa-calendar" aria-hidden="true"></i></h1>
+                        <p>Year</p>
+                        <p>{cdata.Year}</p>
                     </div>
                     <div className="c-val-cont-dash">
-                        <p>Total Likes</p>
-                        <b>{cdata.Population}</b>
+                        <h1><i class="fa fa-users" aria-hidden="true"></i></h1>
+                        <p>Total Population</p>
+                        <p> {cdata.Population}</p>
                     </div>
                     <div className="d-val-cont-dash">
-                        <p>Total Users</p>
-                        <b>{localStorage.name}</b>
+                        <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
+                        <p>Username</p>
+                        <p>{localStorage.name}</p>
                     </div>
 
                 </div>
                 <div className="graph-cont-dash">
                     <h2>Activities</h2>
                     <select>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
-                        <option>hello</option>
+                        <option>09 - April - 2023</option>
+                        <option>09 - April - 2023</option>
+                        <option>09 - April - 2023</option>
+                        <option>09 - April - 2023</option>
                     </select>
                     <div className="in-graph-cont-dash">
                         <Line data={chart} options={options}></Line>
-
                     </div>
 
 
@@ -261,24 +318,41 @@ const Dashboard = () => {
                         <div className="in-pie-graph">
                             <h3>Top Products</h3>
                             <select>
-                                <option>hello</option>
-                                <option>hello</option>
-                                <option>hello</option>
-                                <option>hello</option>
+                                <option>09 - April - 2023</option>
+                                <option>09 - April - 2023</option>
+                                <option>09 - April - 2023</option>
+                                <option>09 - April - 2023</option>
                             </select>
 
                         </div>
-                        <div className='chart-pie'>
-                            <Pie data={chartdata} options={options2}></Pie>
-                        </div>
+                        <div className="meetings-container"></div>
+                            <div className='chart-pie'>     
+                                <Pie data={chartdata} options={options2}></Pie>
+                            </div>
 
 
 
                     </div>
                     <div className="todo">
-                        <div className="todos_section">
+                        <div className="    ">
                             <h3>Today's Schedule</h3>
+                            <p>See all <i class="fa fa-angle-right" aria-hidden="true"></i></p>
                         </div>
+
+                        <div className="meetings-container">
+                            <div className='meetingTimeDirection'>
+                                <h3>Meeting with from kuta Bali</h3>
+                                <p>14:00-15:00</p>
+                                <p>at sunise road, kuta bali</p>
+                            </div>
+                            <div className='meetingTimeDirection2'>
+                            <h3>Meeting with from kuta Bali</h3>
+                            <p>14:00-15:00</p>
+                            <p>at sunise road, kuta bali</p>
+                            </div>
+                        </div>
+                        
+                        
 
                     </div>
 
