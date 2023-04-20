@@ -1,4 +1,4 @@
-.main-dash {
+.main_section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -6,55 +6,47 @@
     padding: 4vh;
 }
 
-.nav-dash {
+.navbar_container {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 12%;
+    width: 20%;
     background-color: black;
     color: white;
 }
 
-.in-nav-dash {
+.in_navbar_container {
     margin: 30px;
 }
 
-.in-nav-dash h1 {
+.in_navbar_container h1 {
     font-size: 36px;
     font-weight: 700;
 }
 
-.in-nav-dash a {
+.in_navbar_container a {
     color: #ccc;
     cursor: pointer;
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.in-nav-dash a:hover {
+.in_navbar_container a:hover {
     color: lightgreen;
 }
 
-.in-nav-dash img {
+.in_navbar_container img {
     height: 20px;
     border-radius: 50px;
     padding: 15px;
 }
 
-.container-dash {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    width: 75%;
-}
-
-.menu-container {
+.menu_container {
     margin: 3% 0;
 }
 
-.menu-container>a {
+.menu_container>a {
     margin: 7% 0%;
 }
 
@@ -93,13 +85,31 @@
     color: #000;
 }
 
-.top-cont-dash {
+.in_nav_dash {
+    padding: 10% 4%;
+    margin: 8%;
+}
+
+.dash_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    width: 75%;
+}
+
+.top_dash_section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.search-dash {
+.logodash_section h1 {
+    font-size: 29px;
+    margin: 0;
+}
+
+.search_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -107,17 +117,12 @@
     margin: 0 2%;
 }
 
-.logo-dash h1 {
-    font-size: 29px;
-    margin: 0;
-}
-
-.search-dash img {
+.search_container img {
     height: 30px;
     border-radius: 15px;
 }
 
-.search-dash>button {
+.search_container>button {
     border: none;
 }
 
@@ -125,7 +130,7 @@
     cursor: pointer;
 }
 
-.search-dash>input {
+.search_container>input {
     height: 30px;
     width: 70%;
     background: #FFFFFF;
@@ -134,13 +139,13 @@
     padding: 12px 10px;
 }
 
-.val-cont-dash {
+.val_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.val-cont-dash div {
+.val_container div {
     display: flex;
     flex-direction: column;
     width: 23%;
@@ -150,20 +155,20 @@
     margin: 1%;
 }
 
-.val-cont-dash>div>p:nth-child(odd) {
+.val_container>div>p:nth-child(odd) {
     font-weight: 800;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
     margin: 2% 0%;
 }
 
-.val-cont-dash>div>h1 {
+.val_container>div>h1 {
     text-align: right;
     margin-bottom: 5%;
     margin-top: 0;
 }
 
-.val-cont-dash p {
+.val_container p {
     margin: 0;
 }
 
@@ -178,40 +183,40 @@ select {
     padding: 0 10px;
 }
 
-.a-val-cont-dash {
+.p_container_val {
     background: #DDEFE0;
 }
 
-.b-val-cont-dash {
+.q_container_val {
     background: #F4ECDD;
 }
 
-.c-val-cont-dash {
+.r_container_val {
     background: #EFDADA;
 }
 
-.d-val-cont-dash {
+.s_container_val {
     background: #DEE0EF;
 }
 
-.in-graph-cont-dash {
-    padding: 0;
-    height: 270px;
-}
-
-.graph-cont-dash {
+.graph_container {
     padding: 20px;
     border-radius: 20px;
     background-color: #FFFFFF;
 }
 
-.charts-cont-dash {
+.In_graph_container {
+    padding: 0;
+    height: 270px;
+}
+
+.charts_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.pie-graph {
+.pie_graph {
     height: 230px;
     width: 47%;
     background-color: #FFFFFF;
@@ -219,22 +224,22 @@ select {
     padding: 2% 1%;
 }
 
-.in-pie-graph {
+.pie_in_graph {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
 }
 
-.chart-pie {
-    height: 180px;
-}
-
-.in-pie-graph h3 {
+.pie_in_graph h3 {
     margin: 0;
 }
 
+.pie_chart {
+    height: 180px;
+}
+
 .todo {
-    height: 230px;
+    height: 285px;
     width: 47%;
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -243,7 +248,7 @@ select {
 .todo>.todos_section {
     display: flex;
     justify-content: space-between;
-    padding: 3% 4%;
+    padding: 2% 2%;
 }
 
 .todo>.todos_section>h3 {
@@ -258,9 +263,10 @@ select {
     border-left: 5px solid lightgreen;
     padding: 5px 8px;
     margin: 2% 0%;
+    line-height: 1px;
 }
 
-.meetings-container {
+.meetings_container {
     padding: 2% 4%;
 }
 
@@ -276,6 +282,7 @@ select {
     border-left: 5px solid lightpink;
     padding: 5px 8px;
     margin: 2% 0%;
+    line-height: 1px;
 }
 
 .meetingTimeDirection2>h3 {
@@ -285,92 +292,3 @@ select {
 .meetingTimeDirection2>p {
     color: #757575;
 }
-
-.main-dash {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: #f5f5f5;
-    padding: 4vh;
-}
-
-.nav-dash {
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 17%;
-    height: 130vh;
-    background-color: black;
-    color: white;
-}
-
-.container-dash {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 80%;
-}
-
-
-/* 
-@media only screen and (max-width: 768px) {
-    .main-dash {
-        flex-direction: column;
-        padding: 2vh;
-    }
-    .nav-dash {
-        width: 100%;
-        height: auto;
-        margin-bottom: 2vh;
-        border-radius: 0;
-    }
-    .in-nav-dash {
-        margin: 20px 0;
-    }
-    .container-dash {
-        width: 100%;
-    }
-    .menu {
-        display: block;
-        margin-top: 2vh;
-        margin-right: 2vh;
-    }
-    .search-dash {
-        width: 50%;
-    }
-    .search-dash input {
-        width: 80%;
-    }
-    .charts-cont-dash {
-        flex-direction: column;
-    }
-    .pie-graph {
-        width: 100%;
-        margin-bottom: 2vh;
-    }
-    .todo {
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-    .nav-dash {
-        height: 100vh;
-    }
-    .container-dash {
-        width: 77%;
-    }
-    .search-dash {
-        width: 40%;
-    }
-    .val-cont-dash div {
-        width: 25%;
-    }
-    .pie-graph {
-        width: 45%;
-    }
-    .todo {
-        width: 50%;
-    }
-} */

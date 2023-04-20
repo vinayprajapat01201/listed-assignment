@@ -201,11 +201,11 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="main-dash">
-      <div className="nav-dash">
-        <div className="in-nav-dash">
+    <div className="main_section">
+      <div className="navbar_container">
+        <div className="in_navbar_container">
           <h1>Board.</h1>
-          <div className="menu-container hover">
+          <div className="menu_container hover">
             <div className='space'></div>
             <a><i class="fa fa-tachometer" aria-hidden="true"></i><p style={{ fontWeight: 900 }}>Dashboard</p></a>
             <a><i class="fa fa-money" aria-hidden="true"></i><p>Transactions</p></a>
@@ -215,21 +215,21 @@ const Dashboard = () => {
           </div>
 
         </div>
-        <div className="in-nav-dash">
+        <div className="in_nav_dash">
           <p>Help</p>
           <p>Contact us</p>
         </div>
       </div >
 
 
-      <div className="container-dash">
+      <div className="dash_container">
         {/* top nav bar */}
-        <div className="top-cont-dash">
-          <div className="logo-dash">
+        <div className="top_dash_section">
+          <div className="logodash_section">
             <h1>Dashboard</h1>
 
           </div>
-          <div className="search-dash">
+          <div className="search_container">
             <input type="search" placeholder="Search" className='hover' />
             <img src={notification} className='hover' />
             <button onClick={handleClick} className='hover'>
@@ -246,30 +246,30 @@ const Dashboard = () => {
         </div>
 
         {/* top nav bar */}
-        <div className="val-cont-dash">
-          <div className="a-val-cont-dash">
+        <div className="val_container">
+          <div className="p_container_val">
             <h1><i class="fa fa-globe" aria-hidden="true"></i></h1>
             <p> Country</p>
             <p>{cdata.Nation}</p>
           </div>
-          <div className="b-val-cont-dash">
+          <div className="q_container_val">
             <h1><i class="fa fa-calendar" aria-hidden="true"></i></h1>
             <p>Year</p>
             <p>{cdata.Year}</p>
           </div>
-          <div className="c-val-cont-dash">
+          <div className="r_container_val">
             <h1><i class="fa fa-users" aria-hidden="true"></i></h1>
             <p>Total Population</p>
             <p> {cdata.Population}</p>
           </div>
-          <div className="d-val-cont-dash">
+          <div className="s_container_val">
             <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
             <p>Username</p>
             <p>{localStorage.name}</p>
           </div>
 
         </div>
-        <div className="graph-cont-dash">
+        <div className="graph_container">
           <h2>Activities</h2>
           <select>
             <option>09 - April - 2023</option>
@@ -277,16 +277,16 @@ const Dashboard = () => {
             <option>09 - April - 2023</option>
             <option>09 - April - 2023</option>
           </select>
-          <div className="in-graph-cont-dash">
+          <div className="In_graph_container">
             <Line data={chart} options={options}></Line>
           </div>
 
 
         </div>
-        <div className="charts-cont-dash">
-          <div className="pie-graph">
+        <div className="charts_container">
+          <div className="pie_graph">
 
-            <div className="in-pie-graph">
+            <div className="pie_in_graph">
               <h3>Top Products</h3>
               <select>
                 <option>09 - April - 2023</option>
@@ -296,7 +296,7 @@ const Dashboard = () => {
               </select>
 
             </div>
-            <div className='chart-pie'>
+            <div className='pie_chart'>
               <Pie data={chartdata} options={options2}></Pie>
             </div>
 
@@ -309,16 +309,16 @@ const Dashboard = () => {
               <p>See all <i class="fa fa-angle-right" aria-hidden="true"></i></p>
             </div>
 
-            <div className="meetings-container">
+            <div className="meetings_container">
               <div className='meetingTimeDirection'>
                 <h3>Meeting with from kuta Bali</h3>
                 <p>14:00-15:00</p>
                 <p>at sunise road, kuta bali</p>
               </div>
               <div className='meetingTimeDirection2'>
-                <h3>Meeting with from kuta Bali</h3>
-                <p>14:00-15:00</p>
-                <p>at sunise road, kuta bali</p>
+                <h3>Check operation at Giga Factory 1</h3>
+                <p>18:00-20:00</p>
+                <p>at central Jakarta</p>
               </div>
             </div>
 
