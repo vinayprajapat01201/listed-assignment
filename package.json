@@ -13,7 +13,7 @@
         "chart.js": "^4.2.1",
         "firebase": "^9.20.0",
         "font-awesome": "^4.7.0",
-        "react": "^18.2.0",
+        "react": "^17.0.2",
         "react-apple-signin-auth": "^1.0.9",
         "react-chartjs-2": "^5.2.0",
         "react-dom": "^18.2.0",
