@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .main_section {
     display: flex;
     flex-direction: row;
@@ -29,17 +34,18 @@
     color: #ccc;
     cursor: pointer;
     display: flex;
+    padding: 5px;
+    font-size: 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .in_navbar_container a:hover {
     color: lightgreen;
+    font-size: 22px;
 }
 
-.in_navbar_container img {
-    height: 20px;
-    border-radius: 50px;
-    padding: 15px;
+.in_navbar_container i {
+    margin: 5px;
 }
 
 .menu_container {
@@ -101,6 +107,7 @@
 .top_dash_section {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 
@@ -142,6 +149,7 @@
 .val_container {
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
     justify-content: space-between;
 }
 
@@ -201,6 +209,7 @@ select {
 
 .graph_container {
     padding: 20px;
+    margin-bottom: 30px;
     border-radius: 20px;
     background-color: #FFFFFF;
 }
@@ -217,7 +226,7 @@ select {
 }
 
 .pie_graph {
-    height: 230px;
+    height: 247px;
     width: 47%;
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -239,7 +248,7 @@ select {
 }
 
 .todo {
-    height: 285px;
+    height: 290px;
     width: 47%;
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -267,7 +276,7 @@ select {
 }
 
 .meetings_container {
-    padding: 2% 4%;
+    padding: 0% 8%;
 }
 
 .meetingTimeDirection>h3 {
