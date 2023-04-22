@@ -9,7 +9,7 @@
     <a href="https://github.com/vinayprajapat01201/listed-assignment"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/vinayprajapat01201/listed-assignment">View Demo</a>
+    <a href="https://listed-assignment-12018667.netlify.app">View Demo</a>
     .
     <a href="https://github.com/vinayprajapat01201/listed-assignment/issues">Report Bug</a>
     .
