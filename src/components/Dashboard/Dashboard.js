@@ -207,11 +207,11 @@ const Dashboard = () => {
           <h1>Board.</h1>
           <div className="menu_container hover">
             <div className='space'></div>
-            <a><i class="fa fa-tachometer" aria-hidden="true"></i><p style={{ fontWeight: 900 }}>Dashboard</p></a>
-            <a><i class="fa fa-money" aria-hidden="true"></i><p>Transactions</p></a>
-            <a><i class="fa fa-clock-o" aria-hidden="true"></i><p>Schedules</p></a>
-            <a><i class="fa fa-user" aria-hidden="true"></i><p>Users</p></a>
-            <a><i class="fa fa-cog" aria-hidden="true"></i><p>Settings</p></a>
+            <a><i class="fa fa-tachometer" aria-hidden="true"></i>Dashboard</a>
+            <a><i class="fa fa-money" aria-hidden="true"></i>Transactions</a>
+            <a><i class="fa fa-clock-o" aria-hidden="true"></i>Schedules</a>
+            <a><i class="fa fa-user" aria-hidden="true"></i>Users</a>
+            <a><i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
           </div>
 
         </div>
@@ -223,7 +223,7 @@ const Dashboard = () => {
 
 
       <div className="dash_container">
-        {/* top nav bar */}
+        
         <div className="top_dash_section">
           <div className="logodash_section">
             <h1>Dashboard</h1>
@@ -245,7 +245,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* top nav bar */}
+        
         <div className="val_container">
           <div className="p_container_val">
             <h1><i class="fa fa-globe" aria-hidden="true"></i></h1>
@@ -277,6 +277,7 @@ const Dashboard = () => {
             <option>09 - April - 2023</option>
             <option>09 - April - 2023</option>
           </select>
+
           <div className="In_graph_container">
             <Line data={chart} options={options}></Line>
           </div>
