@@ -223,7 +223,7 @@ const Dashboard = () => {
 
 
       <div className="dash_container">
-        
+
         <div className="top_dash_section">
           <div className="logodash_section">
             <h1>Dashboard</h1>
@@ -245,7 +245,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        
+
         <div className="val_container">
           <div className="p_container_val">
             <h1><i class="fa fa-globe" aria-hidden="true"></i></h1>
@@ -260,8 +260,11 @@ const Dashboard = () => {
           <div className="r_container_val">
             <h1><i class="fa fa-users" aria-hidden="true"></i></h1>
             <p>Total Population</p>
-            <p> {cdata.Population}</p>
+            {cdata && cdata.Population && (
+              <p>{cdata.Population.toLocaleString()}</p>
+            )}
           </div>
+
           <div className="s_container_val">
             <h1><i class="fa fa-user" aria-hidden="true"></i></h1>
             <p>Username</p>
