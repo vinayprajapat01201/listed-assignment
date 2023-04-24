@@ -127,6 +127,7 @@ body {
 .search_container img {
     height: 30px;
     border-radius: 15px;
+    border: none;
 }
 
 .search_container>button {
@@ -280,6 +281,11 @@ select {
     padding: 0% 8%;
 }
 
+.meetingTimeDirection:hover {
+    background-color: #c8c8c8;
+    transition: 0.3s ease-in-out;
+}
+
 .meetingTimeDirection>h3 {
     color: #5e5e5e;
 }
@@ -293,6 +299,11 @@ select {
     padding: 5px 8px;
     margin: 2% 0%;
     line-height: 1px;
+}
+
+.meetingTimeDirection2:hover {
+    background-color: #c8c8c8;
+    transition: 0.3s ease-in-out;
 }
 
 .meetingTimeDirection2>h3 {
