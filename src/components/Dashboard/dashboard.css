@@ -308,6 +308,11 @@ select {
     transition: 0.3s ease-in-out;
 }
 
+.meetingTimeDirection2:hover {
+    background-color: #c8c8c8;
+    transition: 0.3s ease-in-out;
+}
+
 .meetingTimeDirection2>h3 {
     color: #5e5e5e;
 }
