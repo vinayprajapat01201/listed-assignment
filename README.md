@@ -1,6 +1,6 @@
 <br/>
 <p align="center">
-  <h3 align="center">Listed Assignment</h3>
+  <h3 align="center"> API Fetch</h3>
 
   <p align="center">
     An Awesome Front-end project, made using React!
